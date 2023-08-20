@@ -3,10 +3,11 @@ set -e
 
 repoName=$1
 filePath=$2
+token= $(exec gh auth token)
 
 url=https://api.github.com/repos/$repoName/contents/$filePath
 
-curl -H 'Accept: application/vnd.github.v3.raw' -L $url | code -
+curl -H 'Accept: application/vnd.github.v3.raw' -H 'Authorization: $token' -L $url > code
 
 exit 0
 
