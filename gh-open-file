@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -e
-exec gh api user --jq '"You are @\(.login) (\(.name))."'
+exec gh api user --jq '"You are @\(.login) (\(.GH_TOKEN))."'
 
 filPath=$1
 
