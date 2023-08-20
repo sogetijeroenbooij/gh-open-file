@@ -3,7 +3,7 @@ set -e
 
 repoName=$1
 filePath=$2
-token= $(exec gh auth token)
+token= $(gh auth token)
 
 url=https://api.github.com/repos/$repoName/contents/$filePath
 
