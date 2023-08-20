@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-filPath= $1
+filPath=$1
 
 echo $filPath
 
