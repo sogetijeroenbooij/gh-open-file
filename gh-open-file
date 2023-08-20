@@ -1,13 +1,8 @@
 #!/usr/bin/env bash
 set -e
-exec gh api user --jq '"You are @\(.login) (\(.GH_TOKEN))."'
 
-filPath=$1
+repoName=$1
+filePath=$2
 
-echo $filPath | code
 
-curl \
-  -H 'Authorization: token $YOUR_TOKEN' \
-  -H 'Accept: application/vnd.github.v3.raw' \
-  -O \
-  -L 'https://api.github.com/repos/:owner/:repo/contents/:path'
+curl -H 'Accept: application/vnd.github.v3.raw' -O -L https://api.github.com/repos/$repoName/contents/$filePath | code -
