@@ -4,5 +4,8 @@ set -e
 repoName=$1
 filePath=$2
 
+url=https://api.github.com/repos/$repoName/contents/$filePath
 
-curl -H 'Accept: application/vnd.github.v3.raw' -O -L https://api.github.com/repos/$repoName/contents/$filePath | code -
+echo url
+
+curl -H 'Accept: application/vnd.github.v3.raw' -O -L $url | code -
