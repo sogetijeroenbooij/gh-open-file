@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-echo "Hello gh-open-file!"
+filPath= $1
+
+echo $filPath
 
